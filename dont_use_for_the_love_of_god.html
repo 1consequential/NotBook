@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Bold Formatting</title>
+    <style>
+        #editableDiv {
+            border: 1px solid #ccc;
+            padding: 10px;
+            min-height: 100px;
+            width: 300px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div id="editableDiv" contenteditable="true"></div>
+
+    <script>
+        function formatBoldText() {
+            const editableDiv = document.getElementById("editableDiv");
+
+            let selection = window.getSelection();
+            let range = selection.getRangeAt(0);
+
+            // Extract text content
+            let text = editableDiv.innerText;
+
+            // Convert *text* to bold
+            let newHtml = text.replace(/\*(.*?)\*/g, '<b>$1</b>');
+
+            // Check if changes are needed
+            if (newHtml !== editableDiv.innerHTML) {
+                // Get cursor position before updating
+                let cursorPos = range.startOffset;
+
+                // Update only if there's a change
+                editableDiv.innerHTML = newHtml;
+
+                // Restore cursor position
+                let newRange = document.createRange();
+                let newSelection = window.getSelection();
+
+                try {
+                    let textNode = editableDiv.childNodes[0];
+                    newRange.setStart(textNode, Math.min(cursorPos, textNode.length));
+                    newRange.collapse(true);
+                    newSelection.removeAllRanges();
+                    newSelection.addRange(newRange);
+                } catch (e) {
+                    console.warn("Cursor restore failed:", e);
+                }
+            }
+        }
+
+        document.getElementById('editableDiv').addEventListener('input', formatBoldText);
+    </script>
+</body>
+</html>
+Why is march, april and may so busy in india.

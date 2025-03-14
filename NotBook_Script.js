@@ -51,4 +51,62 @@ window.addEventListener('load', () => {
   });
 });
 
-console.log("v0.11.3");
+// // Pure trash from Stackoverflowm
+// // function parseMarkdown(text) {
+// //     return text
+// //         .replace(/\*(.*?)\*/g, "<b>$1</b>")  // Bold (*bold*)
+// //         .replace(/_(.*?)_/g, "<i>$1</i>");   // Italics (_italic_)
+// // }
+// // 
+// // document.getElementById('div').innerHTML.parseMarkdown;
+// 
+// // function parse_custom_tags(text) {
+// // 	//MAKE IT BOLD YOU F****R.
+// // 	text = text.replace /~(.*?)~/, "<b>$1</b>");
+// // 	return text;
+// // 	let i_text = div;
+// // 	let p_text = parse_custom_tags(i_text);
+// // 	document.getElementById("div").innerHTML = p_text;
+// // 	
+// // }
+// // 
+// // // Example usage
+// // //const inputText = "*Bold* and _italic_ text.";
+// // document.getElementById('div').innerHTML;
+// // 
+// 
+// function parseMarkdown(text) {
+//   // Convert headings
+//   text = text.replace(/^###### (.*$)/gim, '<h6>$1</h6>');
+//   text = text.replace(/^##### (.*$)/gim, '<h5>$1</h5>');
+//   text = text.replace(/^#### (.*$)/gim, '<h4>$1</h4>');
+//   text = text.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+//   text = text.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+//   text = text.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+// 
+//   // Convert bold text
+//   text = text.replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>');
+//   text = text.replace(/__(.*?)__/gim, '<strong>$1</strong>');
+// 
+//   // Convert italic text
+//   text = text.replace(/\*(.*?)\*/gim, '<em>$1</em>');
+//   text = text.replace(/_(.*?)_/gim, '<em>$1</em>');
+// 
+//   // Convert links
+//   text = text.replace(/\[(.*?)\]\((.*?)\)/gim, '<a href="$2">$1</a>');
+// 
+//   // Convert line breaks
+//   text = text.replace(/\n$/gim, '<br />');
+// 
+//   return text.trim();
+// }
+// 
+// // Example usage
+// const markdownText = div;
+// 
+// const htmlText = parseMarkdown(div);
+// console.log(div);
+
+
+
+console.log("NotBook version 0.12.0");

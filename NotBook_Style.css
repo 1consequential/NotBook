@@ -1,129 +1,130 @@
-/* Credits for nice CSS go to:
-Hyperplexed(sort of, a little bit. But still here's the source: https://codepen.io/Hyperplexed/pen/VwXEXbW [Theme Picker/1 line of JS]),
-and https://neumorphism.io by Uiverse.
-And ChatGPT in helping for some small debugging. */
-
-/* New bugs/features to add:
-    1. fix ugly scroll bar.
-    2. fix bug with text overflowing into the text box, making a 2nd x-axis scroll bar appear.
-    3. word counter in tooltip which is counting the words from textarea which will probably be in a div.
-    4. Markdown with the cursed method, with keys. Along with alignment(I'll use the spc or tab charecter for that. Though it makes it so that that will require additional code and CSS for the thing to work correctly.).
-    */
-body {
-  margin: inherit;
-  padding: inherit;
-  font-family: "Tomorrow", sans-serif;
-  font-size: 16px;
-  font-color: white;
-  /*background-color: #09090a;*/
-  background-image: url(https://images.unsplash.com/photo-1516470047996-b6dde636095f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-  /*Credit for the image: https://unsplash.com/photos/aerial-photography-of-landscape-farm-under-nimbus-clouds-F9f1JeZx9q8*/
-  background-repeat: space;
-  background-size: cover;
-  background-attachment: fixed;
-  z-index: -1;
-
-  }
-
-
-input,
-label {
-  color: white;
-  font-family: monospace;
-  font-size: 1em;
-}
-
-
-div{
-  resize: none;
-  font-family: monospace;
-  font-size: 16px;
-  filter:font-smooth: 10px;
-  position: absolute;
-  display:block;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%); /* ChatGPT is good for small stuff like this. */
-  width: 75vh;
-  height: 90vh;
-  backdrop-filter: blur(0px);
-  /*filter:drop-shadow(04px 03px 3px #00000087);*/
-  background-color: rgba(0, 0, 0, 0);
-  overflow-y: scroll;
-}
-
-.textbox{
-  background-color: rgba(30, 30, 30, 0.7);
-  backdrop-filter: blur(3px);
-  border: 01px solid transparent;
-  border-radius: 0.25rem;
-  color: white;
-  outline: none;
-  padding: 10px;
-
-}
-
-div::placeholder {
-  transition:box-shadow 0.3s;
-}
-
-div:focus {
-  border-color: #fb8c00;
-  box-shadow:  12px 12px 24px #111111, -12px -12px 24px #2b2b2b;
-  transition:box-shadow 0.3s;
-}
-
-[contentEditable=true]:empty:not(:focus):before {
-  content: attr(data-text);
-  color: #c4c4c4;
-}
-
-.info-icon {
-
-}
-
-/* ---------------------------------------------------------------------------------------------------------------------------------------------------- */
-/*                                              Below is custom scroll bar code(Chromium-based and Firefox-based)                                       */
-/* ---------------------------------------------------------------------------------------------------------------------------------------------------- */
-
-/* Scrollbar for Chromim-based */
-::-webkit-scrollbar {
-    width: 2.1px;
-    height: 2px;
-    color:white;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    background: rgba(0,0,0,0); /* color of the scrollbar track */
-    border-radius: 10px; /* rounded corners for track */
-    width: 5px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #959595; /* color of the scrollbar handle */
-    border-radius: 10px; /* rounded corners for the handle */
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #555; /* color when hovering over the handle */
-}
-
-/* Optional: Hide the scrollbar when not in use */
-::-webkit-scrollbar {
-    opacity: 0; /* hide scrollbar */
-}
-
-textarea:hover::-webkit-scrollbar {
-    opacity: 1; /* show scrollbar on hover */
-}
-
-
-/* Scrollbar for FireFox-based is in the textarea css code. It is broken. And does not work.*/
-
-.scrollbar {
-  scrollbar-color: white;
-  scrollbar-with: thin;
-}
+	/* Credits for nice CSS go to:
+	Hyperplexed(sort of, a little bit. But still here's the source: https://codepen.io/Hyperplexed/pen/VwXEXbW [Theme Picker/1 line of JS]),
+	and https://neumorphism.io by Uiverse.
+	And ChatGPT in helping for some small debugging. */
+	
+	/* New bugs/features to add:
+	    1. fix ugly scroll bar.
+	    2. fix bug with text overflowing into the text box, making a 2nd x-axis scroll bar appear.
+	    3. word counter in tooltip which is counting the words from textarea which will probably be in a div.
+	    4. Markdown with the cursed method, with keys. Along with alignment(I'll use the spc or tab charecter for that. Though it makes it so that that will require additional code and CSS for the thing to work correctly.).
+	    */
+	body {
+	  margin: inherit;
+	  padding: inherit;
+	  font-family: "Tomorrow", sans-serif;
+	  font-size: 16px;
+	  font-color: white;
+	  /*background-color: #09090a;*/
+	  background-image: url(https://images.unsplash.com/photo-1516470047996-b6dde636095f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+	  /*Credit for the image: https://unsplash.com/photos/aerial-photography-of-landscape-farm-under-nimbus-clouds-F9f1JeZx9q8*/
+	  background-repeat: space;
+	  background-size: cover;
+	  background-attachment: fixed;
+	  z-index: -1;
+	
+	  }
+	
+	
+	input,
+	label {
+	  color: white;
+	  font-family: monospace;
+	  font-size: 1em;
+	}
+	
+	
+	.textbox{
+	  resize: none;
+	  font-family: monospace;
+	  font-size: 16px;
+	  filter:font-smooth: 10px;
+	  position: absolute;
+	  display:block;
+	  left: 50%;
+	  top: 50%;
+	  transform: translate(-50%, -50%); /* ChatGPT is good for small stuff like this. */
+	  width: 75vh;
+	  height: 90vh;
+	  backdrop-filter: blur(0px);
+	  /*filter:drop-shadow(04px 03px 3px #00000087);*/
+	  background-color: rgba(0, 0, 0, 0);
+	  overflow-y: scroll;
+	}
+	
+	.textbox{
+	  background-color: rgba(30, 30, 30, 0.7);
+	  backdrop-filter: blur(3px);
+	  border: 01px solid transparent;
+	  border-radius: 0.25rem;
+	  color: white;
+	  outline: none;
+	  padding: 10px;
+	
+	}
+	
+	.textbox::placeholder {
+	  transition:box-shadow 0.3s;
+	}
+	
+	.textbox:focus {
+	  border-color: #fb8c00;
+	  box-shadow:  12px 12px 24px #111111, -12px -12px 24px #2b2b2b;
+	  transition:box-shadow 0.3s;
+	}
+	
+	[contentEditable=true]:empty:not(:focus):before {
+	  content: attr(data-text);
+	  color: #c4c4c4;
+	}
+	
+	.info-icon {
+	
+	}
+	
+	/* ---------------------------------------------------------------------------------------------------------------------------------------------------- */
+	/*                                              Below is custom scroll bar code(Chromium-based and Firefox-based)                                       */
+	/* ---------------------------------------------------------------------------------------------------------------------------------------------------- */
+	
+	/* Scrollbar for Chromim-based */
+	::-webkit-scrollbar {
+	    width: 2.1px;
+	    height: 2px;
+	    color:white;
+	}
+	
+	/* Track */
+	::-webkit-scrollbar-track {
+	    background: rgba(0,0,0,0); /* color of the scrollbar track */
+	    border-radius: 10px; /* rounded corners for track */
+	    width: 5px;
+	}
+	
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+	    background: #959595; /* color of the scrollbar handle */
+	    border-radius: 10px; /* rounded corners for the handle */
+	}
+	
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+	    background: #555; /* color when hovering over the handle */
+	}
+	
+	/* Optional: Hide the scrollbar when not in use */
+	::-webkit-scrollbar {
+	    opacity: 0; /* hide scrollbar */
+	}
+	
+	textarea:hover::-webkit-scrollbar {
+	    opacity: 1; /* show scrollbar on hover */
+	}
+	
+	
+	/* Scrollbar for FireFox-based is in the textarea css code. It is broken. And does not work.*/
+	
+	.scrollbar {
+	  scrollbar-color: white;
+	  scrollbar-with: thin;
+	}
+	
