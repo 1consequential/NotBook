@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <emscripten.h>
-
+//I am no longer using AI for anything now. How does it create absolute shit like this?
 // Simple function to convert bold markdown **bold** to HTML <b>bold</b>
 EMSCRIPTEN_KEEPALIVE
 const char* convert_markdown_to_html(const char* markdown) {
