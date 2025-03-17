@@ -51,6 +51,19 @@ window.addEventListener('load', () => {
   });
 });
 
+
+const textbox = document.getElementById('textbox'); //Get the 
+
+
+
+
+console.log("NotBook version 0.12.1");
+
+
+//IGNORE! I am still a noob at JS, so this is the suffering I have to deal with. I'll use WASM from here on out.
+
+
+
 // // Pure trash from Stackoverflowm
 // // function parseMarkdown(text) {
 // //     return text
@@ -106,7 +119,29 @@ window.addEventListener('load', () => {
 // 
 // const htmlText = parseMarkdown(div);
 // console.log(div);
-
-
-
-console.log("NotBook version 0.12.0");
+/////AI garbage... I'll make it myself.
+// // Get the div with id "textbox"
+// const textbox = document.getElementById('textbox');
+// 
+// // Listen for keydown event
+// textbox.addEventListener('keydown', function(event) {
+//   // Check if the Enter key (key code 13) is pressed
+//   if (event.key === 'Enter') {
+//     event.preventDefault(); // Prevent the default behavior of the Enter key (which would be to add a <div> or <p>)
+// 
+//     // Create a new <br> element (this creates a new line)
+//     const lineBreak = document.createElement('br');
+//     
+//     // Insert the <br> into the div at the cursor position
+//     const selection = window.getSelection();
+//     const range = selection.getRangeAt(0);
+//     range.deleteContents();  // Optional: Remove any selected text (if any)
+//     range.insertNode(lineBreak);  // Insert the <br> element
+//     
+//     // Optionally, move the cursor to the next line
+//     range.setStartAfter(lineBreak);
+//     range.setEndAfter(lineBreak);
+//     selection.removeAllRanges();
+//     selection.addRange(range);
+//   }
+// });

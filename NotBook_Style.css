@@ -50,6 +50,8 @@
 	  /*filter:drop-shadow(04px 03px 3px #00000087);*/
 	  background-color: rgba(0, 0, 0, 0);
 	  overflow-y: scroll;
+	  text-wrap: wrap;
+	  word-wrap: break-word;
 	}
 	
 	.textbox{
