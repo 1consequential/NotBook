@@ -50,11 +50,13 @@ window.addEventListener('load', () => {
     console.log(db.transaction);
   });
 });
-
+// I have to deal with more torture here.
 
 const textbox = document.getElementById('textbox'); //Get the 
 
-
+function k_enter(textbox) {
+	if 
+}
 
 
 console.log("NotBook version 0.12.1");
