@@ -1,4 +1,4 @@
-# [NotBook](https://idkbuster40.github.io/NotBook)
+# [NotBook](https://1consequential.github.io/NotBook)
 
 
 NotBook is a writing software which is designed to be very lightweight, targeting multiple platforms modern, old and underpowered. 
